@@ -14,7 +14,7 @@ class Checkout
     product = @products[product_code]
     unless product
       puts "Product code #{product_code} not found."
-      return 
+      return
     end
 
     @cart << product

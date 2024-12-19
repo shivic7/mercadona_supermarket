@@ -2,7 +2,6 @@ require_relative '../../lib/checkout'
 require_relative '../../lib/price_calculator'
 
 describe Checkout do
-
   let(:checkout) { Checkout.new }
 
   describe '#scan' do
@@ -12,7 +11,7 @@ describe Checkout do
     end
 
     it 'puts an error for an invalid product code' do
-      expect{ checkout.scan('INVALID') }.to output("Product code INVALID not found.\n").to_stdout
+      expect { checkout.scan('INVALID') }.to output("Product code INVALID not found.\n").to_stdout
     end
   end
 
@@ -31,7 +30,7 @@ describe Checkout do
     context 'Check Buy one get one offer' do
       it 'calculates the total price for green tea' do
         checkout.scan('GR1')
-        checkout.scan('GR1')        
+        checkout.scan('GR1')
         expect(checkout.total).to eq(3.11)
       end
     end

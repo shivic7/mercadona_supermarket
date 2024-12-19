@@ -19,8 +19,8 @@ describe PriceCalculator do
     context 'when products have no offers' do
       it 'calculates the total price correctly' do
         products = [
-          { "code"=> 'GR1', "name"=> 'Green tea', "price"=> 3.11, "offer"=> {} },
-          { "code"=> 'SR1', "name"=> 'Strawberries', "price"=> 5.00, "offer"=> {} }
+          { 'code' => 'GR1', 'name' => 'Green tea', 'price' => 3.11, 'offer' => {} },
+          { 'code' => 'SR1', 'name' => 'Strawberries', 'price' => 5.00, 'offer' => {} }
         ]
         expect(calculator.calculate_total(products)).to eq(8.11)
       end
@@ -74,11 +74,11 @@ describe PriceCalculator do
   describe '#apply_bulk_discount_offer' do
     context 'check bulk offer method' do
       it 'applies the offer on strawberries when threshold passes' do
-        expect(calculator.send(:apply_bulk_discount_offer, @products[1], 6, @products[1]["offer"])).to eq(27.0)
+        expect(calculator.send(:apply_bulk_discount_offer, @products[1], 6, @products[1]['offer'])).to eq(27.0)
       end
 
       it 'applies the offer on strawberries when threshold does not pass' do
-        expect(calculator.send(:apply_bulk_discount_offer, @products[1], 2, @products[1]["offer"])).to eq(10.0)
+        expect(calculator.send(:apply_bulk_discount_offer, @products[1], 2, @products[1]['offer'])).to eq(10.0)
       end
     end
   end
@@ -86,11 +86,12 @@ describe PriceCalculator do
   describe '#apply_volume_discount_offer' do
     context 'check apply_volume_discount_offer method' do
       it 'applies the offer on coffee when threshold passess' do
-        expect(calculator.send(:apply_volume_discount_offer, @products[2], 6, @products[2]["offer"]).round(2)).to eq(44.92)
+        expect(calculator.send(:apply_volume_discount_offer, @products[2], 6,
+                               @products[2]['offer']).round(2)).to eq(44.92)
       end
 
       it 'applies the offer on coffee when threshold does not passess' do
-        expect(calculator.send(:apply_volume_discount_offer, @products[2], 2, @products[2]["offer"])).to eq(22.46)
+        expect(calculator.send(:apply_volume_discount_offer, @products[2], 2, @products[2]['offer'])).to eq(22.46)
       end
     end
   end
