@@ -1,0 +1,33 @@
+{
+  "GR1": {
+    "code": "GR1",
+    "name": "Green tea",
+    "price": 3.11,
+    "offer": {
+      "type": "bogo",
+      "description": "Buy-One-Get-One-Free on Green Tea"
+    }
+  },
+  "SR1": {
+    "code": "SR1",
+    "name": "Strawberries",
+    "price": 5.00,
+    "offer": {
+      "type": "bulk_discount",
+      "threshold": 3,
+      "discounted_price": 4.50,
+      "description": "Bulk discount on Strawberries: 3 or more for £4.50 each"
+    }
+  },
+  "CF1": {
+    "code": "CF1",
+    "name": "Coffee",
+    "price": 11.23,
+    "offer": {
+      "type": "volume_discount",
+      "threshold": 3,
+      "discount_percentage": 33.33,
+      "description": "33.33% off on 3 or more Coffees"
+    }
+  }
+}
